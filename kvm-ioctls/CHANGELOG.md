@@ -10,6 +10,10 @@
   `KVM_CAP_ARM_WRITABLE_IMP_ID_REGS` (Linux 6.15), without which writes to the
   implementation ID registers (for example `MIDR_EL1` through a VMM CPU
   template) fail with EINVAL.
+- [[#387]](https://github.com/rust-vmm/kvm/pull/387) `VcpuExit::IoIn` and
+  `VcpuExit::IoOut` now include the size, in bytes, of each individual I/O
+  operation in their packed data buffers. The size is exposed through a third,
+  newly added field. This is a breaking API change.
 
 ## v0.25.0
 
